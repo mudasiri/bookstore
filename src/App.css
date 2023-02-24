@@ -31,6 +31,14 @@ body {
   padding: 20px 0;
 }
 
+.nav-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0290ff;
+  text-decoration: none;
+}
+
 .nav-bar {
   padding: 24px 4%;
   background-color: #fff;
@@ -52,6 +60,7 @@ body {
   font-size: 0.813rem;
   color: #121212;
   letter-spacing: 1.9px;
+  text-decoration: none;
 }
 
 .icon-button {
