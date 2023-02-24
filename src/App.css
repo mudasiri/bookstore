@@ -1,55 +1,57 @@
-body{
+body {
   padding: 4%;
   background-color: #f5f6fa;
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
+
 .App {
   text-align: center;
 }
-#root{
+
+#root {
   margin: 0;
   padding: 0 0 8%;
   border-radius: 4px;
-  box-shadow: 0 0 60px 0 rgba(0,0,0,.05);
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
 }
 
-.container{
+.container {
   padding: 4%;
 }
 
 .horizontal-divider {
-  height: .125rem;
+  height: 0.125rem;
   background-color: #e8e8e8;
   width: 100%;
   margin: 2.5rem 0 1.813rem;
 }
 
-.form{
+.form {
   padding: 20px 0;
 }
 
-.nav-bar{
+.nav-bar {
   padding: 24px 4%;
-background-color: #fff;
-border-bottom: 1px solid #e8e8e8;
-display: flex;
-align-items: center;
-gap: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   flex-grow: 1;
   list-style-type: none;
   gap: 40px;
 }
 
-.nav-link{
-  opacity: .5;
-font-size: .813rem;
-color: #121212;
-letter-spacing: 1.9px;
+.nav-link {
+  opacity: 0.5;
+  font-size: 0.813rem;
+  color: #121212;
+  letter-spacing: 1.9px;
 }
 
 .icon-button {
