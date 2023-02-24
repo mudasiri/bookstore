@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Book({ title, author }) {
+function Book({ ...book }) {
   return (
     <div>
-      <h3>{title}</h3>
-      <h4>{author}</h4>
+      <h3>{book.title}</h3>
+      <h4>{book.author}</h4>
       <button type="button">Remove</button>
       <div className="horizontal-divider" />
     </div>
