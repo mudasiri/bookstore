@@ -19,7 +19,7 @@ function Form() {
     <>
       <h2>Add new Book</h2>
       <form
-        className="form"
+        className="add-form"
         onSubmit={
         (e) => {
           e.preventDefault();
@@ -28,9 +28,9 @@ function Form() {
         }
       }
       >
-        <input type="text" name="title" onChange={(e) => update(e)} placeholder="Enter book title" />
-        <input type="text" name="author" onChange={(e) => update(e)} placeholder="Enter book Author" />
-        <button type="submit">Add Book</button>
+        <input className="input title-input" type="text" name="title" onChange={(e) => update(e)} placeholder="Enter book title" />
+        <input className="input category-input" type="text" name="author" onChange={(e) => update(e)} placeholder="Enter book Author" />
+        <button className="primary-button-big" type="submit">Add Book</button>
       </form>
     </>
   );
