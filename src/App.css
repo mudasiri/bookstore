@@ -78,7 +78,7 @@ body {
   border: 1px solid #e8e8e8;
   background-color: #fff;
   font-size: 1rem;
-  letter-spacing: -.15px;
+  letter-spacing: -0.15px;
   color: #121212;
 }
 
@@ -97,11 +97,11 @@ body {
   border-radius: 3px;
   background-color: #0290ff;
   border: none;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   color: #fff;
-  font-size: .813rem;
+  font-size: 0.813rem;
   font-weight: 700;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .add-form {
