@@ -13,10 +13,13 @@ export const categoriesSlice = createSlice({
     status: (state) => {
       state.checkStatus = 'Under Construction';
     },
+    add: () => {
+
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const status = categoriesSlice.actions;
+export const { status, add } = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;

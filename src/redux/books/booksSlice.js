@@ -1,7 +1,24 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  books: [],
+  books: [
+    {
+      id: 1,
+      title: 'Alidu in the Forest',
+      author: 'Mudasir Issah',
+    },
+    {
+      id: 2,
+      title: 'Alidu in the Forest',
+      author: 'Mudasir Issah',
+    },
+    {
+      id: 3,
+      title: 'Alidu in the Forest',
+      author: 'Mudasir Issah',
+    },
+  ],
 };
 
 export const booksSlice = createSlice({
@@ -12,7 +29,7 @@ export const booksSlice = createSlice({
       state.books.push(action.payload);
     },
     remove: (state, action) => {
-      state.books.filter((book) => book !== action.payload);
+      state.books = state.books.filter((book) => book.id !== action.payload);
     },
   },
 });
