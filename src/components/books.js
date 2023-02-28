@@ -4,7 +4,7 @@ import Book from './book';
 import Form from './form';
 
 function Books() {
-  const { books } = useSelector((state) => state.books) ;
+  const { books } = useSelector((state) => state.books);
   return (
     <div className="container">
       {books.map((book) => (
