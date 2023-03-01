@@ -19,7 +19,7 @@ function Form() {
   };
   return (
     <>
-      <h2>Add new Book</h2>
+      <h2 className="form-title">Add new Book</h2>
       <form
         className="add-form"
         onSubmit={
