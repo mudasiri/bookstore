@@ -7,7 +7,6 @@ const initialState = {
   error: '',
 };
 
-
 // Async thunk to fetch books
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   const response = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${process.env.REACT_APP_APP_ID}/books`);
@@ -16,7 +15,7 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
 });
 
 // Async thunk to add books
-export const addBooks = createAsyncThunk('books/addBook',async (book) =>{
+export const addBooks = createAsyncThunk('books/addBook', async (book, { dispatch }) => {
   const response = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${process.env.REACT_APP_APP_ID}/books`, {
     method: 'POST',
     headers: {
@@ -25,6 +24,7 @@ export const addBooks = createAsyncThunk('books/addBook',async (book) =>{
     body: JSON.stringify(book),
   });
   const data = await response.json();
+  dispatch(fetchBooks);
   return data;
 });
 
@@ -36,8 +36,8 @@ export const removeBook = createAsyncThunk(
       method: 'DELETE',
     });
     const data = await response.json();
-    return bookId;
-  }
+    return data;
+  },
 );
 
 export const booksSlice = createSlice({
@@ -48,31 +48,40 @@ export const booksSlice = createSlice({
       state.books.push(action.payload);
     },
     remove: (state, action) => {
-      state.books = state.books.filter((book) => book.id !== action.payload);
+      state.books = state.books.filter((book) => book.item_id !== action.payload);
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBooks.fulfilled, (state, action) => {
         state.status = 'succeded';
-        state.books = action.payload;
-        console.log(state.books);
+        const liveBooks = action.payload;
+        const booksStore = [];
+        Object.keys(liveBooks).map((id) => (
+          booksStore.push(
+            {
+              item_id: id,
+              title: liveBooks[id][0].title[0],
+              author: liveBooks[id][0].author[0],
+              category: liveBooks[id][0].category,
+            },
+          )
+        ));
+        state.books = booksStore;
       })
       .addCase(fetchBooks.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       })
-      .addCase(addBooks.fulfilled, async (state, action) => {
+      .addCase(addBooks.fulfilled, async (state) => {
         state.status = 'bookadded';
-        console.log(action.payload);
       })
       .addCase(addBooks.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       })
-      .addCase(removeBook.fulfilled, (state, action) => {
+      .addCase(removeBook.fulfilled, (state) => {
         state.status = 'succeeded';
-        state.books = state.books.filter((book) => book.id !== action.payload);
       });
   },
 });

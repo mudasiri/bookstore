@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addBooks } from '../redux/books/booksSlice';
+import { useDispatch } from 'react-redux';
+/* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import { v4 as uuidv4 } from 'uuid';
+import { add, addBooks } from '../redux/books/booksSlice';
 
 function Form() {
   const [book, setBook] = useState();
@@ -23,10 +24,11 @@ function Form() {
         className="add-form"
         onSubmit={
          async (e) => {
-          e.preventDefault();
-          dispatch(addBooks(book, dispatch));
-          e.target.reset();
-        }
+           e.preventDefault();
+           dispatch(add(book));
+           dispatch(addBooks(book, dispatch));
+           e.target.reset();
+         }
       }
       >
         <input className="input title-input" type="text" name="title" onChange={(e) => update(e)} placeholder="Enter book title" />

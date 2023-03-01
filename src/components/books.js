@@ -27,14 +27,17 @@ function Books() {
   }
   return (
     <div className="container">
-      {Object.keys(books).map((id) => (
-        <Book 
-        key={id} 
-        title={books[id][0].title} 
-        author={books[id][0].author} 
-        category={books[id][0].category} 
-        id={id} />
-      ))}
+      {
+        books.map((book) => (
+          <Book
+            key={book.item_id}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+            id={book.item_id}
+          />
+        ))
+      }
       <Form />
     </div>
   );
