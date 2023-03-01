@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { add } from '../redux/books/booksSlice';
+import { addBooks } from '../redux/books/booksSlice';
+import { v4 as uuidv4 } from 'uuid';
 
 function Form() {
-  const { books } = useSelector((state) => state.books);
   const [book, setBook] = useState();
   const dispatch = useDispatch();
   const update = (e) => {
     setBook(
       {
         ...book,
-        id: books.length + 1,
+        item_id: uuidv4(),
         [e.target.name]: [e.target.value],
+        category: 'Fiction',
       },
     );
   };
@@ -21,9 +22,9 @@ function Form() {
       <form
         className="add-form"
         onSubmit={
-        (e) => {
+         async (e) => {
           e.preventDefault();
-          dispatch(add(book));
+          dispatch(addBooks(book, dispatch));
           e.target.reset();
         }
       }
