@@ -32,7 +32,14 @@ function Form() {
       }
       >
         <input className="input title-input" type="text" name="title" onChange={(e) => update(e)} placeholder="Enter book title" />
-        <input className="input category-input" type="text" name="author" onChange={(e) => update(e)} placeholder="Enter book Author" />
+        <input className="input author-input" type="text" name="author" onChange={(e) => update(e)} placeholder="Enter book Author" />
+        <select className="input category-input">
+          <option>Select Category</option>
+          <option>Action</option>
+          <option>Economy</option>
+          <option>Fiction</option>
+          <option>Technology</option>
+        </select>
         <button className="primary-button-big" type="submit">Add Book</button>
       </form>
     </>

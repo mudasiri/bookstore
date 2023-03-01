@@ -83,11 +83,14 @@ body {
 }
 
 .title-input {
-  width: 50%;
+  width: 30%;
 }
 
-.category-input {
+.author-input {
   width: 30%;
+}
+.category-input {
+  width: 20%;
 }
 
 .primary-button-big {
