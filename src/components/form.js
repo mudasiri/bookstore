@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { add } from '../redux/books/booksSlice';
+import { useDispatch } from 'react-redux';
+/* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
+import { v4 as uuidv4 } from 'uuid';
+import { add, addBooks } from '../redux/books/booksSlice';
 
 function Form() {
-  const { books } = useSelector((state) => state.books);
   const [book, setBook] = useState();
   const dispatch = useDispatch();
   const update = (e) => {
     setBook(
       {
         ...book,
-        id: books.length + 1,
+        item_id: uuidv4(),
         [e.target.name]: [e.target.value],
+        category: 'Fiction',
       },
     );
   };
@@ -21,11 +23,12 @@ function Form() {
       <form
         className="add-form"
         onSubmit={
-        (e) => {
-          e.preventDefault();
-          dispatch(add(book));
-          e.target.reset();
-        }
+         async (e) => {
+           e.preventDefault();
+           dispatch(add(book));
+           dispatch(addBooks(book, dispatch));
+           e.target.reset();
+         }
       }
       >
         <input className="input title-input" type="text" name="title" onChange={(e) => update(e)} placeholder="Enter book title" />
