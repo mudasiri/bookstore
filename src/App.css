@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&display=swap');
+
 body {
   padding: 4%;
   background-color: #f5f6fa;
@@ -20,9 +21,11 @@ body {
 .container {
   padding: 4%;
 }
-.user-ico{
+
+.user-ico {
   width: 2.5%;
 }
+
 .horizontal-divider {
   height: 0.125rem;
   background-color: #e8e8e8;
@@ -65,10 +68,12 @@ body {
   letter-spacing: 1.9px;
   text-decoration: none;
 }
+
 .active-link {
   opacity: 1;
   color: #121212;
 }
+
 .icon-button {
   cursor: pointer;
   width: 2.813rem;
@@ -95,6 +100,7 @@ body {
 .author-input {
   width: 30%;
 }
+
 .category-input {
   width: 20%;
 }
@@ -119,15 +125,19 @@ body {
   grid-gap: 32px;
   gap: 32px;
 }
-.form-title, .input {
-  font-family: "Montserrat",sans-serif;
+
+.form-title,
+.input {
+  font-family: "Montserrat", sans-serif;
 }
+
 .form-title {
   font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -.18px;
+  letter-spacing: -0.18px;
   color: #888;
 }
+
 .book {
   background-color: #fff;
   border-radius: 4px;
@@ -146,81 +156,94 @@ body {
   flex-direction: column;
   width: 100%;
 }
+
 .action-buttons {
   display: flex;
   align-items: center;
   margin-top: 1.313rem;
 }
+
 .book-category {
-  font-family: "Montserrat",sans-serif;
-  font-size: .875rem;
-  opacity: .5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  opacity: 0.5;
   margin: 0;
 }
+
 .book-title {
-  margin:0;
+  margin: 0;
   font-size: 1.375rem;
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
 }
+
 .book-author {
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
   margin: 0;
 }
+
 .button-outline {
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   background-color: transparent;
   border: none;
   color: #4386bf;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 300;
   align-items: center;
   cursor: pointer;
 }
+
 .vertical-divider {
-  width: .125rem;
+  width: 0.125rem;
   height: 1.5rem;
   background-color: #e8e8e8;
   margin: 0 1rem;
 }
+
 .progress-container {
   display: flex;
   align-items: center;
 }
+
 .circular-progress-container {
   width: 5.625rem;
   height: 5.625rem;
-  padding: .63rem .625rem .75rem .75rem;
+  padding: 0.63rem 0.625rem 0.75rem 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .circular-progress {
   position: absolute;
   border-radius: 50%;
   width: 4.25rem;
   height: 4.25rem;
   border: 5px solid #307bbe;
-    border-left-color: rgb(48, 123, 190);
+  border-left-color: rgb(48, 123, 190);
   border-left-color: #e8e8e8;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 .percent-complete {
   font-size: 2rem;
   margin-bottom: 10px;
 }
+
 .completed {
-  font-size: .875rem;
-  opacity: .5;
+  font-size: 0.875rem;
+  opacity: 0.5;
 }
+
 .progress-divider {
-  width: .125rem;
+  width: 0.125rem;
   height: 4.375rem;
   margin: 0 3.688rem 0 4.938rem;
   background-color: #e8e8e8;
 }
+
 .current-chapter-container {
   display: flex;
   flex-direction: column;
@@ -228,23 +251,26 @@ body {
   gap: 20px;
   width: 14rem;
 }
+
 .current-chapter-label {
-  font-size: .813rem;
-  opacity: .5;
+  font-size: 0.813rem;
+  opacity: 0.5;
 }
+
 .current-chapter {
-  margin-top: .438rem;
+  margin-top: 0.438rem;
   font-size: 1rem;
-  letter-spacing: -.4px;
+  letter-spacing: -0.4px;
 }
+
 .primary-button {
   cursor: pointer;
   border: none;
   background-color: #0290ff;
   border-radius: 3px;
   padding: 8px 24px;
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 300;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   color: #fff;
 }

@@ -6,10 +6,10 @@ function Navbar() {
     <nav className="nav-bar">
       <Link to="/" className="nav-brand">BookStore</Link>
       <ul className="nav-links">
-        <li><NavLink to="/" className={({isActive}) => isActive ? 'active-link nav-link' : 'nav-link'}>BOOKS</NavLink></li>
-        <li><NavLink to="/categories" className={({isActive}) => isActive ? 'active-link nav-link' : 'nav-link'}>CATEGORIES</NavLink></li>
+        <li><NavLink to="/" className={({ isActive }) => (isActive ? 'active-link nav-link' : 'nav-link')}>BOOKS</NavLink></li>
+        <li><NavLink to="/categories" className={({ isActive }) => (isActive ? 'active-link nav-link' : 'nav-link')}>CATEGORIES</NavLink></li>
       </ul>
-      <img className="user-ico" alt="Icon of User" src="user.png"/>
+      <img className="user-ico" alt="Icon of User" src="user.png" />
     </nav>
   );
 }
